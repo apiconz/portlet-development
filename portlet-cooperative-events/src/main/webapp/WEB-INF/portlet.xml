@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app version="2.0"
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	id="pe.apiconz.porletapp.cooperative.events">
+
+	<portlet>
+		<portlet-name>SenderPortlet</portlet-name>
+		<portlet-class>pe.com.apiconz.example.portlets.SenderPortlet</portlet-class>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<portlet-info>
+			<title>Sender Portlet</title>
+		</portlet-info>
+		<supported-processing-event>
+			<name>responseEvent</name>
+		</supported-processing-event>
+		<supported-publishing-event>
+			<name>requestEvent</name>
+		</supported-publishing-event>
+	</portlet>
+
+
+	<portlet>
+		<portlet-name>ReceiverPortlet</portlet-name>
+		<portlet-class>pe.com.apiconz.example.portlets.ReceiverPortlet</portlet-class>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<portlet-info>
+			<title>Receiver Portlet</title>
+		</portlet-info>
+		<supported-processing-event>
+			<name>requestEvent</name>
+		</supported-processing-event>
+		<supported-publishing-event>
+			<name>responseEvent</name>
+		</supported-publishing-event>
+	</portlet>
+
+
+	<default-namespace>http://pe.apiconz.portletevent/</default-namespace>
+	<event-definition>
+		<name>requestEvent</name>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+	<event-definition>
+		<name>responseEvent</name>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+
+</portlet-app>
