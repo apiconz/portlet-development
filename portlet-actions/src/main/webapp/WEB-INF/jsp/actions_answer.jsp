@@ -9,7 +9,7 @@
 			.getAttribute("cliente", PortletSession.PORTLET_SCOPE);
 	pageContext.setAttribute("cliente", cliente);
 %>
-<fmt:setBundle basename="otraprueba.example" />
+<fmt:setBundle basename="example" />
 
 <h1><fmt:message key="example.titulo.dos" /></h1>
 <br />

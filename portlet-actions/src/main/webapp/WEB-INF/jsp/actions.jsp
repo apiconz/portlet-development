@@ -6,7 +6,7 @@
 	//Portlet namespace
 	String portletNS = renderResponse.getNamespace();
 %>
-<fmt:setBundle basename="otraprueba.example" />
+<fmt:setBundle basename="example" />
 
 <h1>
 	<fmt:message key="example.titulo.dos" />
