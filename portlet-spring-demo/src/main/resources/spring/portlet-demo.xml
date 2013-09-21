@@ -1,0 +1,37 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context
+        				http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<context:annotation-config/>
+	
+	<context:component-scan base-package="demo.spring.portlet.controller"/>
+	
+	<bean class="org.springframework.web.portlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+	
+	<bean id="demoViewController" class="demo.spring.portlet.controller.DemoViewController"/>
+	<bean id="demoEditController" class="demo.spring.portlet.controller.DemoEditController"/>
+	<bean id="demoHelpController" class="demo.spring.portlet.controller.DemoHelpController"/>
+	
+  	<bean id="portletModeHandlerMapping"
+    	class="org.springframework.web.portlet.handler.PortletModeHandlerMapping">
+    	<property name="order" value="1" />
+	    <property name="portletModeMap">
+	      <map>
+	        <entry key="view">
+	          <ref bean="demoViewController" />
+	        </entry>
+	        <entry key="edit">
+	          <ref bean="demoEditController" />
+	        </entry>
+	        <entry key="help">
+	          <ref bean="demoHelpController" />
+	        </entry>
+	      </map>
+	    </property>
+  	</bean>
+	
+</beans>
