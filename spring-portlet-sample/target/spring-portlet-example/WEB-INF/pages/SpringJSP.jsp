@@ -1,0 +1,1 @@
+<h2>Hola Spring Portlet</h2>
